@@ -1,6 +1,8 @@
 package com.test;
 
+import java.util.Map;
 import java.util.Random;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
 
 public class Test {
@@ -10,7 +12,12 @@ public class Test {
 	 */
 	public static void main(String[] args) {
 		//TestYsf();
-		testRandom();
+		//testRandom();
+		
+		Test test = new Test();
+		Map m1 = test.ObjectTest();
+		Map m2 = test.ObjectTest();
+		System.out.println(m1 == m2);
 
 	}
 	
@@ -41,6 +48,14 @@ public class Test {
 		System.out.println(date.length);
 		System.out.println(date[0].length);
 
+	}
+	
+	public Map ObjectTest(){
+		Map<String,String> map = new ConcurrentHashMap<>();
+		//System.out.println("map:"+map.toString());
+		return map;
+		
+		
 	}
 
 }
